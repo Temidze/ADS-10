@@ -44,5 +44,18 @@ private:
         for (size_t i = 0; i < root->nextVec.size(); i++)
             swapp(root->nextVec[i], str);
     }
+
+    std::string operator[](int i) const {
+        if (i >= sw.size()) return "";
+        return sw[i];
+    }
+
+    explicit Tree(std::vector<char> value) {
+        root = new Node();
+        root->value = '*';
+        treeConstr(root, value);
+        swapp(root);
+    }
+
 };
 #endif  // INCLUDE_TREE_H_

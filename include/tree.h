@@ -29,7 +29,7 @@ class Tree {
         for (size_t b = 0; b < root->nextVec.size(); b++)
             root->nextVec[b]->value = path[b];
         for (size_t c = 0; c < root->nextVec.size(); c++)
-            treeConstr(root->listok[c], path);
+            build(root->nextVec[c], path);
     }
 
     std::vector<std::string> changeVec;
@@ -45,6 +45,7 @@ class Tree {
             swapp(root->nextVec[i], str);
     }
 
+ public:
     std::string operator[](int i) const {
         if (i >= changeVec.size()) return "";
         return changeVec[i];

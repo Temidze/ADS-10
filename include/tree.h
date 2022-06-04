@@ -35,19 +35,19 @@ class Tree {
     std::vector<std::string> changeVec;
     void swapp(Node* root, std::string str = "") {
         if (!root->nextVec.size()) {
-            let += root->value;
+            str += root->value;
             changeVec.push_back(str);
             return;
         }
         if (root->value != '*')
-            let += root->value;
+            str += root->value;
         for (size_t i = 0; i < root->nextVec.size(); i++)
             swapp(root->nextVec[i], str);
     }
 
     std::string operator[](int i) const {
-        if (i >= sw.size()) return "";
-        return sw[i];
+        if (i >= changeVec.size()) return "";
+        return changeVec[i];
     }
 
     explicit Tree(std::vector<char> value) {

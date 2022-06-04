@@ -5,7 +5,7 @@
 #include <string>
 
 class Tree {
-private:
+ private:
     struct Node {
         char value;
         std::vector<Node*> nextVec;
@@ -13,13 +13,13 @@ private:
     Node* root;
 
     void build(Node* root, std::vector<char> path) {
-        if (!path.size()){
+        if (!path.size()) {
             return;
         }
         if (root->value != '*') {
-            for (auto syn = path.begin(); syn != path.end(); syn++){
+            for (auto syn = path.begin(); syn != path.end(); syn++) {
                 if (*syn == root->value) {
-                    path.erase(syn); 
+                    path.erase(syn);
                     break;
                 }
             }
@@ -56,6 +56,5 @@ private:
         treeConstr(root, value);
         swapp(root);
     }
-
 };
 #endif  // INCLUDE_TREE_H_

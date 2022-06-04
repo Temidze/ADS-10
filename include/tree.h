@@ -54,7 +54,7 @@ class Tree {
     explicit Tree(std::vector<char> value) {
         root = new Node();
         root->value = '*';
-        treeConstr(root, value);
+        build(root, value);
         swapp(root);
     }
 };
